@@ -25,6 +25,14 @@ The server persists using a SQLite3 database named `database.sqlite` in the site
 
 Editor config is available.
 
+This project uses eslint to detect suspicious code and linting.
+
+## Testing
+
+This project uses jest for testing.
+
+To execute test: `npm test`
+
 ### Debugging
 
 This project uses https://www.npmjs.com/package/debug for development logging. To start `nodemon` and enable logging:
