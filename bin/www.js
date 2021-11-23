@@ -4,22 +4,22 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('nadia:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('nadia:server');
+const http = require('http');
 
 /**
  * Get port and store in Express.
  */
 
-var port = 3000;
+const port = 3000;
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app)
+const server = http.createServer(app)
   .listen(port, onListening);
 
 /**
@@ -27,8 +27,8 @@ var server = http.createServer(app)
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  const addr = server.address();
+  const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
