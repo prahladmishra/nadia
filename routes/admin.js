@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var debug = require('debug')('nadia:route:admin')
+const express = require('express');
+const router = express.Router();
+const debug = require('debug')('nadia:route:admin')
 const _ = require('lodash');
 const reservations = require('../lib/reservations');
 
 /* GET admin listing. */
-router.get('/', function(req, res, next) {
+router.get('/admin', function(req, res, next) {
   reservations.fetch()
     .then(reservations => {
       res.render('admin', {

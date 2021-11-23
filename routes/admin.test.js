@@ -5,6 +5,7 @@ const mockMorgan = jest.fn((req, res, next) => next());
 const mockTable = jest.fn().mockResolvedValue([]);
 
 beforeAll(() => {
+  jest.mock('./', () => require('./admin'));
   jest.mock('morgan', () => () => mockMorgan);
   jest.mock('../lib/knex', () => ({ select: () => ({ table: mockTable })}));
   app = request(require('../app'));
@@ -12,6 +13,7 @@ beforeAll(() => {
 
 afterAll(() => {
   jest.unmock('morgan');
+  jest.unmock('./');
 });
 
 describe('GET', () => {
